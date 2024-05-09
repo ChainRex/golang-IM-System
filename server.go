@@ -87,7 +87,7 @@ func (server *Server) Handler(conn net.Conn) {
 			// 不写代码，打破select阻塞状态，每个条件重新判断，定时器重新计时
 
 		// 本质是一个channel
-		case <-time.After(time.Second * 10):
+		case <-time.After(time.Second * 300):
 			// 超时踢出
 			user.SendMsg("you have been kick out\n")
 			// 销毁资源
